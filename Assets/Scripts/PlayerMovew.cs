@@ -10,6 +10,9 @@ public class PlayerMovew : MonoBehaviour
 
     //jump
     [SerializeField] float jumpForce;
+    [SerializeField] bool isJumping;
+
+
     void Start()
     {
         rd2d = GetComponent<Rigidbody2D>();
@@ -23,10 +26,26 @@ public class PlayerMovew : MonoBehaviour
         rd2d.linearVelocity = new Vector2(move * speed, rd2d.linearVelocity.y);
 
         //jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rd2d.AddForce(new Vector2(rd2d.linearVelocity.x, jumpForce));
             Debug.Log("Jump!"); //for debugging
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = true;
         }
     }
 }
