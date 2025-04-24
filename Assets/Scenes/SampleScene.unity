@@ -5245,8 +5245,8 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 100
-  m_SpeedVariation: 8
+  m_Speed: 30
+  m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
@@ -6690,8 +6690,8 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 100
-  m_SpeedVariation: 8
+  m_Speed: 30
+  m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
@@ -7678,8 +7678,8 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 100
-  m_SpeedVariation: 8
+  m_Speed: 30
+  m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
@@ -7918,8 +7918,8 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 100
-  m_SpeedVariation: 8
+  m_Speed: 30
+  m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
@@ -8071,8 +8071,8 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 100
-  m_SpeedVariation: 8
+  m_Speed: 30
+  m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
@@ -8782,11 +8782,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1126430519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3126954061560617408, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
+  m_PrefabInstance: {fileID: 2469108416519425941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1126430521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6253017653355359943, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
   m_PrefabInstance: {fileID: 2469108416519425941}
   m_PrefabAsset: {fileID: 0}
+--- !u!253 &1126430523
+BuoyancyEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126430519}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_SurfaceLevel: 0
+  m_Density: 2
+  m_LinearDrag: 5
+  m_AngularDrag: 5
+  m_FlowAngle: 0
+  m_FlowMagnitude: 0
+  m_FlowVariation: 0
 --- !u!4 &1131610905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3843738092428631588, guid: 0b241a88960649343a8a77617fec0224, type: 3}
@@ -16035,10 +16059,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8338495811948333413, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338495811948333413, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338495811948333413, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3126954061560617408, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1126430523}
   m_SourcePrefab: {fileID: 100100000, guid: c45085e4a1d00d143a8ccaf4b90b2362, type: 3}
 --- !u!1001 &4290658425387627866
 PrefabInstance:
