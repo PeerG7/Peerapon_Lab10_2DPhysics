@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class PlayerMovew : MonoBehaviour
+{
+    Rigidbody2D rd2d; //private variable
+
+    //walk left-right
+    float move; //store input form player
+    [SerializeField] float speed;
+
+    //jump
+    [SerializeField] float jumpForce;
+    void Start()
+    {
+        rd2d = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //walk left-right
+        move = Input.GetAxis("Horizontal");
+        rd2d.linearVelocity = new Vector2(move * speed, rd2d.linearVelocity.y);
+
+        //jump
+        if (Input.GetButtonDown("Jump"))
+        {
+            rd2d.AddForce(new Vector2(rd2d.linearVelocity.x, jumpForce));
+            Debug.Log("Jump!"); //for debugging
+        }
+    }
+}
